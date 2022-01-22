@@ -1,0 +1,10 @@
+spring:
+  jackson:
+    serialization:
+      indent-output: true
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/library
+
+repository:
+  reInitDataOnStart: true
