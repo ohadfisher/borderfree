@@ -11,15 +11,31 @@ import java.util.List;
  * The project is for test assignment only. Distribution of the project is prohibited.
  */
 
+// todo comment: Change the name Reader -> ReaderEntry
+
+
+// todo comment: Use lombok Data + noArgsConstructor
+
+
+
+// todo comment: its feel like the object here is miss the list of books (????)
+
+
+
+//todo comment: @Document -> @Document("Readers")
+//todo comment: readr-> readerEntity
 @Document
 public class Reader {
 
-    @Id
+    @Id //todo need be unique @Column(unique = true)
     private String id;
 
     private String firstName;
 
     private String lastName;
+
+
+    // todo comment use lombok data all under this line need to be removed
 
     public String getId() {
         return id;
@@ -33,6 +49,9 @@ public class Reader {
         return firstName;
     }
 
+
+
+
     public void setFirstName(String firstName) {
         this.firstName =firstName;
     }
@@ -45,6 +64,8 @@ public class Reader {
         this.lastName = lastName;
     }
 
+
+    //not need
     @Override
     public String toString() {
         return "Reader{" +

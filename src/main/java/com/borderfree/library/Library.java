@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The project is for test assignment only. Distribution of the project is prohibited.
  */
 
+// todo comment add swagger annotition
+
 @SpringBootApplication
 public class Library {
 
