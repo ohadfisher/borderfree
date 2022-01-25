@@ -1,4 +1,4 @@
-package com.borderfree.library.domain;
+package com.borderfree.library.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 
 
-    // todo comment:  Change package domain -> model
 
     // todo comment: Use lombok @NoArgConstructor
 
@@ -28,22 +27,8 @@ public class BookEntity {
 
     private String name;
 
-    // todo comment:  Change name to numberOfCopyAvailable
-    private Integer available;
+    private Integer numberOfCopyAvailable;
 
-    // todo comment change CatalogEntry to Enum
-    private CatalogEntry catalog;
-
-
-    // todo comment: Duplicate- already create by lombok data
-    @Override
-    public String toString() {
-        return "BookEntity{" +
-                "isbn=" + isbn +
-                ", author='" + author + '\'' +
-                ", name='" + name + '\'' +
-                ", available=" + available +
-                '}';
-    }
+    private Catalog catalog;
 
 }

@@ -1,7 +1,9 @@
 package com.borderfree.library.repository;
 
-import com.borderfree.library.domain.BookEntity;
+import com.borderfree.library.model.BookEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
+
+import java.util.List;
 
 /**
  * Copyright &copy; 2021 by Borderfree, Pitney Bowes.
@@ -9,4 +11,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 
 public interface BookRepository extends MongoRepository<BookEntity, String> {
+    List<BookEntity> findByAuthorLike(String author);
 }

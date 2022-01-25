@@ -1,8 +1,8 @@
 package com.borderfree.library;
 
-import com.borderfree.library.domain.BookEntity;
-import com.borderfree.library.domain.CatalogEntry;
-import com.borderfree.library.domain.Reader;
+import com.borderfree.library.model.BookEntity;
+import com.borderfree.library.model.Catalog;
+import com.borderfree.library.model.ReaderEntity;
 import com.borderfree.library.repository.BookRepository;
 import com.borderfree.library.repository.ReadersRepository;
 import lombok.RequiredArgsConstructor;
@@ -51,30 +51,30 @@ public class RepositoryDataInitializer implements ApplicationListener<Applicatio
         bookRepository.deleteAll();
         List<BookEntity> bookEntities = List.of(
                 new BookEntity("978-1-60309-454-2", "Hannah Templer", "Cosmoknights (Book One)", 2,
-                        new CatalogEntry("QA 200.86.S50")),
+                        new Catalog("QA 200.86.S50")),
                 new BookEntity("978-1-60309-454-3", "Hannah Templer", "Cosmoknights (Book Two)", 2,
-                        new CatalogEntry("QA 200.86.S51")),
+                        new Catalog("QA 200.86.S51")),
                 new BookEntity("978-1-60309-454-4", "Duane Murray;Hannah Templer", "Zoo Story", 4,
-                        new CatalogEntry("QA 320.547.X22")),
+                        new Catalog("QA 320.547.X22")),
                 new BookEntity("978-1-60309-495-5", "Duane Murray;Shawn Daley", "Better Place", 5,
-                        new CatalogEntry("Z668 .R365 2000")),
+                        new Catalog("Z668 .R365 2000")),
                 new BookEntity("978-1-891830-69-3", "Nicolas Mahler", "Lone Racer", 3,
-                        new CatalogEntry("X3529 10.17 B158"))
+                        new Catalog("X3529 10.17 B158"))
         );
         bookRepository.saveAll(bookEntities);
     }
 
     private void initReaders() {
         readersRepository.deleteAll();
-        List<Reader> readers = new ArrayList<>();
-        Reader r1 = new Reader();
+        List<ReaderEntity> readerEntities = new ArrayList<>();
+        ReaderEntity r1 = new ReaderEntity();
         r1.setFirstName("Jessica");
         r1.setLastName("Anslow");
-        readers.add(r1);
-        Reader r2 = new Reader();
+        readerEntities.add(r1);
+        ReaderEntity r2 = new ReaderEntity();
         r2.setFirstName("David");
         r2.setLastName("Dawson");
-        readers.add(r2);
-        readersRepository.saveAll(readers);
+        readerEntities.add(r2);
+        readersRepository.saveAll(readerEntities);
     }
 }

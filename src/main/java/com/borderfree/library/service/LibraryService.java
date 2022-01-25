@@ -1,7 +1,7 @@
 package com.borderfree.library.service;
 
-import com.borderfree.library.domain.BookEntity;
-import com.borderfree.library.domain.Reader;
+import com.borderfree.library.model.BookEntity;
+import com.borderfree.library.model.ReaderEntity;
 import com.borderfree.library.repository.BookRepository;
 import com.borderfree.library.repository.ReadersRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,27 +14,25 @@ import java.util.List;
  * The project is for test assignment only. Distribution of the project is prohibited.
  */
 
-// todo comment: Change the BookService -> LibraryService
-
-
 
 @Service
 @RequiredArgsConstructor
-public class BookService {
+public class LibraryService {
 
-    private final BookRepository repository;
+    private final BookRepository bookRepository;
     private final ReadersRepository readersRepository;
 
     // todo comment: the method service.getAllBooks, not need to get any parameter
-    public List<BookEntity> getAllBooks(String author) {
-        return repository.findAll();
+    public List<BookEntity> getAllBooks() {
+        return bookRepository.findAll();
     }
 
     //todo comment: Change the name of the method: getReaders -> getAllReaders
-    public List<Reader> getReaders() {
+    public List<ReaderEntity> getReaders() {
         return readersRepository.findAll();
     }
 
-    //todo comment: Add missing method that exist at he controller List<BookEntry>getAllBooksAuthor(String author)
-
+    public List<BookEntity> getAllBooksAuthor(String author) {
+        return bookRepository.findByAuthorLike(author);
+    }
 }

@@ -1,6 +1,6 @@
 package com.borderfree.library.repository;
 
-import com.borderfree.library.domain.Reader;
+import com.borderfree.library.model.ReaderEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -8,5 +8,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  * The project is for test assignment only. Distribution of the project is prohibited.
  */
 
-public interface ReadersRepository extends MongoRepository<Reader, String> {
+public interface ReadersRepository extends MongoRepository<ReaderEntity, String> {
 }
