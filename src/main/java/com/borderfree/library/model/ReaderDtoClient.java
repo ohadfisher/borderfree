@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ReaderDto {
+public class ReaderDtoClient {
 
     private String id;
 
@@ -15,7 +15,7 @@ public class ReaderDto {
 
     private String lastName;
 
-    public static ReaderDto from(ReaderEntity readerEntity) {
-        return new ReaderDto(readerEntity.getId(), readerEntity.getFirstName(), readerEntity.getLastName());
+    public static ReaderDtoClient from(ReaderEntity readerEntity) {
+        return new ReaderDtoClient(readerEntity.getId(), readerEntity.getFirstName(), readerEntity.getLastName());
     }
 }

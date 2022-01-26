@@ -6,7 +6,7 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class BookDto {
+public class BookDtoClient {
 
     private String isbn;
 
@@ -15,7 +15,7 @@ public class BookDto {
     private String name;
 
 
-    public static BookDto from(BookEntity bookEntity) {
-        return new BookDto(bookEntity.getIsbn(), bookEntity.getAuthor(), bookEntity.getName());
+    public static BookDtoClient from(BookEntity bookEntity) {
+        return new BookDtoClient(bookEntity.getIsbn(), bookEntity.getAuthor(), bookEntity.getName());
     }
 }

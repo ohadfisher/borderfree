@@ -9,4 +9,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 
 public interface ReadersRepository extends MongoRepository<ReaderEntity, String> {
+    ReaderEntity findByFirstNameAndLastName(String firstName, String lastName);
+
+    void deleteByFirstNameAndLastName(String firstName, String lastName);
+
 }

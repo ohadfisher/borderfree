@@ -11,5 +11,5 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Catalog {
-    private String bookshelf;
+    private String bookShelf;
 }
